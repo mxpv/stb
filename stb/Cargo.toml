@@ -1,0 +1,12 @@
+[package]
+name = "stb"
+version = "0.1.0"
+authors = ["Maksym Pavlenko <pavlenko.maksym@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+stb-sys = { path = "../stb-sys" }
+
+[features]
+default = ["stb_easy_font"]
+stb_easy_font = ["stb-sys/stb_easy_font"]

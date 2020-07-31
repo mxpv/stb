@@ -7,4 +7,9 @@ links = "stb"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
+[features]
+stb_easy_font = []
+
+[build-dependencies]
+bindgen = "0.54"
+cc = "1.0"

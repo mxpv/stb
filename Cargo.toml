@@ -1,2 +1,2 @@
 [workspace]
-members = ["stb-sys"]
+members = ["stb-sys", "stb"]
