@@ -1,0 +1,68 @@
+[config]
+skip_core_tasks = true
+default_to_workspace = false
+
+[env]
+RUST_BACKTRACE = "1"
+
+[env.development]
+RUST_BACKTRACE = "full"
+
+#
+# Checks
+#
+
+[tasks.fmt]
+command = "cargo"
+args = ["fmt", "--all", "--", "--check", "--files-with-diff"]
+
+[tasks.clippy]
+command = "cargo"
+args = ["clippy", "--all-targets", "--all-features", "--", "-D", "warnings"]
+
+#
+# Build
+#
+
+[tasks.build-debug]
+command = "cargo"
+args = ["build", "--workspace", "--all-targets", "--all-features"]
+
+[tasks.build-release]
+command = "cargo"
+args = ["build", "--workspace", "--release"]
+
+[tasks.build]
+run_task = [
+    { name = "build-debug", condition = { profiles = ["development"] } },
+    { name = "build-release", condition = { profiles = ["production"] } },
+]
+
+[tasks.build-fast]
+command = "cargo"
+args = ["check"]
+
+#
+# Tests
+#
+
+[tasks.tests]
+command = "cargo"
+args = ["test", "--workspace", "--no-fail-fast"]
+
+[tasks.tests-ci]
+command = "cargo"
+args = ["test", "--workspace"]
+
+#
+# Top level targets
+#
+
+[tasks.linters]
+dependencies = ["fmt", "clippy"]
+
+[tasks.ci]
+dependencies = ["linters", "build-debug", "tests-ci"]
+
+[tasks.default]
+dependencies = ["linters", "build-fast", "tests"]

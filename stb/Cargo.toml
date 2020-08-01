@@ -14,7 +14,7 @@ readme = "../README.md"
 stb-sys = { path = "../stb-sys", version = "0.1.0" }
 
 [features]
-default = []
+default = ["stb_easy_font", "stb_dxt", "stb_image"]
 
 # Easy font
 stb_easy_font = ["stb-sys/stb_easy_font"]
