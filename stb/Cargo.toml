@@ -11,7 +11,7 @@ keywords = ["stb", "gamedev"]
 readme = "../README.md"
 
 [dependencies]
-stb-sys = "*"
+stb-sys = "0.1.1"
 
 [features]
 default = ["stb_easy_font", "stb_dxt", "stb_image"]
