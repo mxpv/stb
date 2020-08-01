@@ -11,12 +11,14 @@ static FILES: &[&str] = &[
 ];
 
 fn main() {
+    let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
+    let bindings_path = out_dir.join("bindings.rs");
+
     if FILES.is_empty() {
-        // Nothing to do
+        // Write an empty file so `include!` won't fail the build
+        std::fs::write(bindings_path, "").unwrap();
         return;
     }
-
-    let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
 
     let mut builder = bindgen::builder();
     for f in FILES {
@@ -28,7 +30,7 @@ fn main() {
         .whitelist_var("stb.*")
         .generate()
         .expect("Failed to generate bindings")
-        .write_to_file(out_path.join("bindings.rs"))
+        .write_to_file(bindings_path)
         .expect("Failed to write bindings file");
 
     let mut builder = cc::Build::new();
