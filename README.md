@@ -6,7 +6,35 @@ The following APIs are currently available:
 - `stb_easy_font`
 - `stb_dxt`
 - `stb_image`
- 
+Each module has to be enabled with the corresponding feature.
+
+## Usage
+
+Add the following to your `Cargo.toml` file:
+
+```toml
+[dependencies]
+stb =  { version = "0.1.0", features = ["stb_easy_font", "stb_dxt", "stb_image"] }
+```
+
+## Create features
+By default the crate offers no default features, so you'd need to specify which modules you require in your project.
+
+Here is the list of feature toggles available so far:
+- `stb_easy_font`
+- `stb_dxt`
+    * `stb_dxt_use_rounding_bias`
+- `stb_image`
+    * `stbi_no_linear`
+    * `stbi_no_jpeg`
+    * `stbi_no_png`
+    * `stbi_no_bmp`
+    * `stbi_no_psd`
+    * `stbi_no_gif`
+    * `stbi_no_hdr`
+    * `stbi_no_pic`
+    * `stbi_no_pnm`
+
 ## Implementation notes
 
 - `stb_easy_font`

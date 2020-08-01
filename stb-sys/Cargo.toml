@@ -4,8 +4,12 @@ version = "0.1.0"
 authors = ["Maksym Pavlenko <pavlenko.maksym@gmail.com>"]
 edition = "2018"
 links = "stb"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+repository = "https://github.com/mxpv/stb"
+description = "Low level bindgen generated wrappers for stb libraries"
+license = "MIT"
+categories = ["api-bindings", "parsing", "rendering::data-formats", "game-development"]
+keywords = ["stb", "gamedev"]
+readme = "../README.md"
 
 [features]
 stb_easy_font = []

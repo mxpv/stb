@@ -3,12 +3,18 @@ name = "stb"
 version = "0.1.0"
 authors = ["Maksym Pavlenko <pavlenko.maksym@gmail.com>"]
 edition = "2018"
+repository = "https://github.com/mxpv/stb"
+description = "Safe Rust API for stb libraries"
+license = "MIT"
+categories = ["api-bindings", "parsing", "rendering::data-formats", "game-development"]
+keywords = ["stb", "gamedev"]
+readme = "../README.md"
 
 [dependencies]
-stb-sys = { path = "../stb-sys" }
+stb-sys = { path = "../stb-sys", version = "0.1.0" }
 
 [features]
-default = ["stb_easy_font", "stb_dxt", "stb_image"]
+default = []
 
 # Easy font
 stb_easy_font = ["stb-sys/stb_easy_font"]
