@@ -1,5 +1,11 @@
 # stb
 
+[![Crate](https://img.shields.io/crates/v/stb.svg)](https://crates.io/crates/stb)
+![CI](https://github.com/mxpv/stb/workflows/CI/badge.svg)
+[![Docs](https://docs.rs/stb/badge.svg)](https://docs.rs/stb)
+![Crates.io](https://img.shields.io/crates/l/stb)
+
+
 All in one safe Rust API and wrappers for [stb libraries](https://github.com/nothings/stb).
 
 The following APIs are currently available:
@@ -13,14 +19,14 @@ Add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-stb = "0.1.0"
+stb = "0.1.1"
 ```
 
 or if you want to have a specific feature selection:
 
 ```toml
 [dependencies]
-stb = { version = "0.1.0", default-features = false, features = ["stb_easy_font", "stb_dxt", "stb_image"] }
+stb = { version = "0.1.1", default-features = false, features = ["stb_easy_font", "stb_dxt", "stb_image"] }
 ```
 
 ## Create features

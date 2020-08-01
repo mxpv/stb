@@ -34,3 +34,6 @@ stbi_no_gif = ["stb-sys/stbi_no_gif"]
 stbi_no_hdr = ["stb-sys/stbi_no_hdr"]
 stbi_no_pic = ["stb-sys/stbi_no_pic"]
 stbi_no_pnm = ["stb-sys/stbi_no_pnm"]
+
+[badges]
+maintenance = { status = "actively-developed" }
