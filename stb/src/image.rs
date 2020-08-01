@@ -1,3 +1,24 @@
+//! Rust API for image loading/decoding from file/memory: JPG, PNG, TGA, BMP, PSD, GIF, HDR, PIC.
+//! See https://github.com/nothings/stb/blob/master/stb_image.h
+//!
+//! Primarily of interest to game developers and other people who can avoid problematic images and
+//! only need the trivial interface.
+//!
+//! - JPEG baseline & progressive (12 bpc/arithmetic not supported, same as stock IJG lib)
+//! - PNG 1/2/4/8/16-bit-per-channel
+//! - TGA (not sure what subset, if a subset)
+//! - BMP non-1bpp, non-RLE
+//! - PSD (composited view only, no extra channels, 8/16 bit-per-channel)
+//! - GIF (*comp always reports as 4-channel)
+//! - HDR (radiance rgbE format)
+//! - PIC (Softimage PIC)
+//! - PNM (PPM and PGM binary only)
+//!
+//! Current limitations:
+//! - No 12-bit-per-channel JPEG
+//! - No JPEGs with arithmetic coding
+//! - GIF always returns *comp=4
+
 use stb_sys as sys;
 use std::cmp::Ordering;
 use std::ffi;
@@ -25,6 +46,7 @@ pub struct Info {
     pub components: i32,
 }
 
+/// Holds image memory allocated by stb and responsible for calling `stbi_image_free` once dropped.
 pub struct Data<T> {
     data: *mut T,
     size: usize,
@@ -43,11 +65,13 @@ impl<T> Data<T> {
         Data { data, size }
     }
 
+    /// Returns image memory as a slice
     pub fn as_slice(&self) -> &[T] {
         let size = self.size();
         unsafe { slice::from_raw_parts(self.data, size) }
     }
 
+    /// Returns the number of elements (which is width x height x desired_channels)
     pub fn size(&self) -> usize {
         self.size
     }
@@ -134,6 +158,8 @@ where
         }
     }
 
+    /// Fill `data` with `size` bytes.
+    /// Return number of bytes actually read
     extern "C" fn io_read(
         user: *mut raw::c_void,
         data: *mut raw::c_char,
@@ -142,10 +168,12 @@ where
         Wrapper::<R>::from_user_data(user).read(data, size)
     }
 
+    /// Skip the next `n` bytes, or 'unget' the last `-n` bytes if negative
     extern "C" fn io_skip(user: *mut raw::c_void, n: raw::c_int) {
         Wrapper::<R>::from_user_data(user).skip(n);
     }
 
+    /// Returns nonzero if we are at end of file/data
     extern "C" fn io_eof(user: *mut raw::c_void) -> raw::c_int {
         Wrapper::<R>::from_user_data(user).eof()
     }
@@ -255,6 +283,7 @@ pub fn stbi_load_from_memory(
     }
 }
 
+/// 8-bits-per-channel interface, load image from reader
 pub fn stbi_load_from_reader<R>(
     reader: &mut R,
     desired_channels: Channels,
@@ -283,6 +312,7 @@ where
     }
 }
 
+/// 16-bits-per-channel interface, load image from memory
 pub fn stbi_load_16_from_memory(
     buffer: &[u8],
     desired_channels: Channels,
