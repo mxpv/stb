@@ -1,15 +1,20 @@
 [package]
 name = "stb-sys"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Maksym Pavlenko <pavlenko.maksym@gmail.com>"]
 edition = "2018"
-links = "stb"
+links = "libstb"
 repository = "https://github.com/mxpv/stb"
 description = "Low level bindgen generated wrappers for stb libraries"
 license = "MIT"
 categories = ["api-bindings", "parsing", "rendering::data-formats", "game-development"]
 keywords = ["stb", "gamedev"]
 readme = "../README.md"
+include = [
+    "src/",
+    "build.rs",
+    "vendor/stb/*.*",
+]
 
 [features]
 stb_easy_font = []
@@ -27,7 +32,6 @@ stbi_no_gif = []
 stbi_no_hdr = []
 stbi_no_pic = []
 stbi_no_pnm = []
-
 
 [build-dependencies]
 bindgen = "0.54"

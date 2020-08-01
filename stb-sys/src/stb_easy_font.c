@@ -1,4 +1,4 @@
-#include "../../vendor/stb/stb_easy_font.h"
+#include "../vendor/stb/stb_easy_font.h"
 
 // Linker won't generate symbols for static functions defined in the header file, so we add these wrappers.
 // See https://users.rust-lang.org/t/ffi-and-static-functions-in-headers/9995

@@ -71,5 +71,5 @@ fn main() {
         builder.define("STBI_NO_PNM", "1");
     }
 
-    builder.files(FILES).warnings(false).compile("stb");
+    builder.files(FILES).warnings(false).compile("libstb");
 }
