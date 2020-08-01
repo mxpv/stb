@@ -8,5 +8,7 @@ edition = "2018"
 stb-sys = { path = "../stb-sys" }
 
 [features]
-default = ["stb_easy_font"]
+default = ["stb_easy_font", "stb_dxt"]
 stb_easy_font = ["stb-sys/stb_easy_font"]
+stb_dxt = ["stb-sys/stb_dxt"]
+stb_dxt_use_rounding_bias = ["stb-sys/stb_dxt_use_rounding_bias"]

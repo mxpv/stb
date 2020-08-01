@@ -5,6 +5,8 @@ static FILES: &[&str] = &[
     "src/dummy.c", // Keep a dummy file to avoid compile errors when no features specified
     #[cfg(feature = "stb_easy_font")]
     "src/stb_easy_font.c",
+    #[cfg(feature = "stb_dxt")]
+    "src/stb_dxt.c",
 ];
 
 fn main() {
@@ -23,5 +25,10 @@ fn main() {
         .write_to_file(out_path.join("bindings.rs"))
         .expect("Failed to write bindings file");
 
-    cc::Build::new().files(FILES).compile("libstb");
+    let mut builder = cc::Build::new();
+
+    #[cfg(feature = "stb_dxt_use_rounding_bias")]
+    builder.define("STB_DXT_USE_ROUNDING_BIAS", "1");
+
+    builder.files(FILES).compile("libstb");
 }

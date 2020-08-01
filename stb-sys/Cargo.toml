@@ -9,6 +9,8 @@ links = "stb"
 
 [features]
 stb_easy_font = []
+stb_dxt = []
+stb_dxt_use_rounding_bias = []
 
 [build-dependencies]
 bindgen = "0.54"
