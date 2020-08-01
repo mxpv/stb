@@ -2,7 +2,6 @@ use std::env;
 use std::path::PathBuf;
 
 static FILES: &[&str] = &[
-    "src/dummy.c", // Keep a dummy file to avoid compile errors when no features specified
     #[cfg(feature = "stb_easy_font")]
     "src/stb_easy_font.c",
     #[cfg(feature = "stb_dxt")]
@@ -10,6 +9,11 @@ static FILES: &[&str] = &[
 ];
 
 fn main() {
+    if FILES.is_empty() {
+        // Nothing to do
+        return;
+    }
+
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
 
     let mut builder = bindgen::builder();
