@@ -8,7 +8,23 @@ edition = "2018"
 stb-sys = { path = "../stb-sys" }
 
 [features]
-default = ["stb_easy_font", "stb_dxt"]
+default = ["stb_easy_font", "stb_dxt", "stb_image"]
+
+# Easy font
 stb_easy_font = ["stb-sys/stb_easy_font"]
+
+# DXT
 stb_dxt = ["stb-sys/stb_dxt"]
 stb_dxt_use_rounding_bias = ["stb-sys/stb_dxt_use_rounding_bias"]
+
+# Image
+stb_image = ["stb-sys/stb_image"]
+stbi_no_linear = ["stb-sys/stbi_no_linear"]
+stbi_no_jpeg = ["stb-sys/stbi_no_jpeg"]
+stbi_no_png = ["stb-sys/stbi_no_png"]
+stbi_no_bmp = ["stb-sys/stbi_no_bmp"]
+stbi_no_psd = ["stb-sys/stbi_no_psd"]
+stbi_no_gif = ["stb-sys/stbi_no_gif"]
+stbi_no_hdr = ["stb-sys/stbi_no_hdr"]
+stbi_no_pic = ["stb-sys/stbi_no_pic"]
+stbi_no_pnm = ["stb-sys/stbi_no_pnm"]

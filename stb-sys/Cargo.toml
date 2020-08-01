@@ -9,8 +9,21 @@ links = "stb"
 
 [features]
 stb_easy_font = []
+
 stb_dxt = []
 stb_dxt_use_rounding_bias = []
+
+stb_image = []
+stbi_no_linear = []
+stbi_no_jpeg = []
+stbi_no_png = []
+stbi_no_bmp = []
+stbi_no_psd = []
+stbi_no_gif = []
+stbi_no_hdr = []
+stbi_no_pic = []
+stbi_no_pnm = []
+
 
 [build-dependencies]
 bindgen = "0.54"
