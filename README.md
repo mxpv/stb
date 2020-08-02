@@ -15,6 +15,13 @@ The following APIs are currently available:
 - `stb_image_write`
 - `stb_perlin`
 
+Please refer to the [documentation](https://docs.rs/stb) for details or have a look on [examples](https://github.com/mxpv/stb/tree/master/stb/examples).
+
+Not implemented, but planned:
+- `stb_truetype`
+- `stb_image_resize`
+- `stb_rect_pack`
+
 ## Usage
 
 Add the following to your `Cargo.toml` file:
