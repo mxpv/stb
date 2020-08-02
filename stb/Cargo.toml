@@ -14,6 +14,9 @@ readme = "../README.md"
 [dependencies]
 stb-sys = { path = "../stb-sys", version = "0.3.1" }
 
+[[example]]
+name = "easy_font"
+
 [features]
 default = [
     "stb_easy_font",
