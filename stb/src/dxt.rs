@@ -7,9 +7,9 @@ pub enum CompressionMode {
     /// Default compression mode
     Normal = 0,
     /// Use dithering. dubious win. never use for normal maps and the like!
-    DITHER = 1,
+    Dither = 1,
     /// High quality mode, does two refinement steps instead of 1. ~30-40% slower.
-    HIGHQUAL = 2,
+    Highqual = 2,
 }
 
 /// Call `stb_compress_dxt_block()` for every block (you must pad) source should be a 4x4 block of

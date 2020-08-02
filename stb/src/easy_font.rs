@@ -1,4 +1,10 @@
 //! Intended for when you just want to get some text displaying in a 3D app as quickly as possible.
+//!
+//! Rust implementation notes:
+//!
+//! `stb_easy_font_print` accepts a buffer for quads with the size of your choice.
+//! Currently `stb` C API offers no way to predict buffer's size depending on text string.
+//! If the buffer is not large enought, quads will be truncated.
 
 use stb_sys as sys;
 use std::ffi::CStr;

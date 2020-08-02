@@ -18,6 +18,14 @@
 //! - No 12-bit-per-channel JPEG
 //! - No JPEGs with arithmetic coding
 //! - GIF always returns *comp=4
+//!
+//! Rust implementation notes:
+//!
+//! -  The crate wraps `stbi_io_callbacks` with a generic reader (anything that implements `io::Read` and `io::Seek`).
+//! So look for `stbi_xyz_from_reader` APIs instead of `stbi_xyz_from_callbacks`.
+//! -  There is no `Stdio` version of the API since it is convenient enough to use `stbi_xyz_from_reader`
+//! API from Rust and there is no need to pay C string conversion overhead.
+//! - You can use `stbi_no_FORMAT` feature toggles to disable not needed image formats.
 
 use stb_sys as sys;
 use std::cmp::Ordering;
