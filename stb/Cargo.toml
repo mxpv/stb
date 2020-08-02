@@ -4,6 +4,7 @@ version = "0.3.0"
 authors = ["Maksym Pavlenko <pavlenko.maksym@gmail.com>"]
 edition = "2018"
 repository = "https://github.com/mxpv/stb"
+documentation = "https://docs.rs/stb"
 description = "Safe Rust API for stb libraries"
 license = "MIT"
 categories = ["api-bindings", "parsing", "rendering::data-formats", "game-development"]

@@ -5,6 +5,7 @@ authors = ["Maksym Pavlenko <pavlenko.maksym@gmail.com>"]
 edition = "2018"
 links = "libstb"
 repository = "https://github.com/mxpv/stb"
+documentation = "https://docs.rs/stb-sys"
 description = "Low level bindgen generated wrappers for stb libraries"
 license = "MIT"
 categories = ["api-bindings", "parsing", "rendering::data-formats", "game-development"]
