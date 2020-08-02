@@ -10,6 +10,8 @@ static FILES: &[&str] = &[
     "src/stb_image.c",
     #[cfg(feature = "stb_image_write")]
     "src/stb_image_write.c",
+    #[cfg(feature = "stb_perlin")]
+    "src/stb_perlin.c",
 ];
 
 fn main() {

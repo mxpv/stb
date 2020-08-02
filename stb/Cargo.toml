@@ -11,7 +11,7 @@ keywords = ["stb", "gamedev"]
 readme = "../README.md"
 
 [dependencies]
-stb-sys = { path = "../stb-sys", version = "0.2.0" }
+stb-sys = { path = "../stb-sys", version = "0.3.0" }
 
 [features]
 default = [
@@ -19,6 +19,7 @@ default = [
     "stb_dxt",
     "stb_image",
     "stb_image_write",
+    "stb_perlin",
 ]
 
 # Easy font
@@ -42,6 +43,9 @@ stbi_no_pnm = ["stb-sys/stbi_no_pnm"]
 
 # Image write
 stb_image_write = ["stb-sys/stb_image_write"]
+
+# Perlin
+stb_perlin = ["stb-sys/stb_perlin"]
 
 [badges]
 maintenance = { status = "actively-developed" }

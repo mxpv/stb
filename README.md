@@ -13,6 +13,7 @@ The following APIs are currently available:
 - `stb_dxt`
 - `stb_image`
 - `stb_image_write`
+- `stb_perlin`
 
 ## Usage
 
@@ -20,14 +21,14 @@ Add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-stb = "0.2.0"
+stb = "0.3.0"
 ```
 
 or if you want to have a specific feature selection:
 
 ```toml
 [dependencies]
-stb = { version = "0.2.0", default-features = false, features = ["stb_easy_font"] }
+stb = { version = "0.3.0", default-features = false, features = ["stb_easy_font"] }
 ```
 
 ## Create features
@@ -46,6 +47,7 @@ Here is the list of feature toggles available in this crate so far:
     * `stbi_no_pic`
     * `stbi_no_pnm`
 - `stb_image_write`
+- `stb_perlin`
 
 ## Implementation notes
 

@@ -35,3 +35,7 @@ pub mod image;
 /// Image writing to disk: PNG, TGA, BMP
 #[cfg(feature = "stb_image_write")]
 pub mod image_write;
+
+/// Revised Perlin noise (3D input, 1D output)
+#[cfg(feature = "stb_perlin")]
+pub mod perlin;

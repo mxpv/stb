@@ -1,6 +1,6 @@
 [package]
 name = "stb-sys"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Maksym Pavlenko <pavlenko.maksym@gmail.com>"]
 edition = "2018"
 links = "libstb"
@@ -34,6 +34,8 @@ stbi_no_pic = []
 stbi_no_pnm = []
 
 stb_image_write = []
+
+stb_perlin = []
 
 [build-dependencies]
 bindgen = "0.54"
