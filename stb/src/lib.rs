@@ -31,3 +31,7 @@ pub mod dxt;
 /// Image loading/decoding
 #[cfg(feature = "stb_image")]
 pub mod image;
+
+/// Image writing to disk: PNG, TGA, BMP
+#[cfg(feature = "stb_image_write")]
+pub mod image_write;

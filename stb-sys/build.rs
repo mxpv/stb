@@ -8,6 +8,8 @@ static FILES: &[&str] = &[
     "src/stb_dxt.c",
     #[cfg(feature = "stb_image")]
     "src/stb_image.c",
+    #[cfg(feature = "stb_image_write")]
+    "src/stb_image_write.c",
 ];
 
 fn main() {
