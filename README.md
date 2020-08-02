@@ -48,3 +48,8 @@ Here is the list of feature toggles available in this crate so far:
     * `stbi_no_pnm`
 - `stb_image_write`
 - `stb_perlin`
+
+## Contributing
+
+Contributions are generally welcome. Make sure your changes make sense for this project (if in doubt, open an issue first),
+the code is reasonbly tested, and passes the CI checks.
