@@ -17,8 +17,10 @@ The following APIs are currently available:
 
 Please refer to the [documentation](https://docs.rs/stb) for details or have a look on [examples](https://github.com/mxpv/stb/tree/master/stb/examples).
 
-Not implemented, but planned:
+In progress:
 - `stb_truetype`
+
+Not implemented, but planned:
 - `stb_image_resize`
 - `stb_rect_pack`
 

@@ -12,7 +12,7 @@ keywords = ["stb", "gamedev"]
 readme = "../README.md"
 
 [dependencies]
-stb-sys = { path = "../stb-sys", version = "0.6.0" }
+stb-sys = { path = "../stb-sys", version = "0.6.1" }
 
 [[example]]
 name = "easy_font"

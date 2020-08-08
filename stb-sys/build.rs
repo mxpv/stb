@@ -38,6 +38,7 @@ fn main() {
         .whitelist_function("stb.*")
         .whitelist_type("stb.*")
         .whitelist_var("stb.*")
+        .derive_default(true)
         .generate()
         .expect("Failed to generate bindings")
         .write_to_file(bindings_path)

@@ -39,3 +39,7 @@ pub mod image_write;
 /// Revised Perlin noise (3D input, 1D output)
 #[cfg(feature = "stb_perlin")]
 pub mod perlin;
+
+/// Parse, decode, and rasterize characters from truetype fonts
+#[cfg(feature = "stb_truetype")]
+pub mod truetype;
