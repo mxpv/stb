@@ -28,14 +28,14 @@ Add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-stb = "0.3.0"
+stb = "0.3.2"
 ```
 
 or if you want to have a specific feature selection:
 
 ```toml
 [dependencies]
-stb = { version = "0.3.0", default-features = false, features = ["stb_easy_font"] }
+stb = { version = "0.3.2", default-features = false, features = ["stb_easy_font"] }
 ```
 
 ## Create features

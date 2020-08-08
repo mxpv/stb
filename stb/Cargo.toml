@@ -1,6 +1,6 @@
 [package]
 name = "stb"
-version = "0.3.1"
+version = "0.3.2"
 authors = ["Maksym Pavlenko <pavlenko.maksym@gmail.com>"]
 edition = "2018"
 repository = "https://github.com/mxpv/stb"
