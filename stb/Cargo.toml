@@ -12,7 +12,7 @@ keywords = ["stb", "gamedev"]
 readme = "../README.md"
 
 [dependencies]
-stb-sys = { path = "../stb-sys", version = "0.4.0" }
+stb-sys = { path = "../stb-sys", version = "0.5.0" }
 
 [[example]]
 name = "easy_font"
@@ -24,6 +24,8 @@ default = [
     "stb_image",
     "stb_image_write",
     "stb_perlin",
+    "stb_rect_pack",
+    "stb_image_resize"
 ]
 
 # Easy font
@@ -50,6 +52,10 @@ stb_image_write = ["stb-sys/stb_image_write"]
 
 # Perlin
 stb_perlin = ["stb-sys/stb_perlin"]
+
+# To be implemented
+stb_rect_pack = ["stb-sys/stb_image_resize"]
+stb_image_resize = ["stb-sys/stb_image_resize"]
 
 [badges]
 maintenance = { status = "actively-developed" }
