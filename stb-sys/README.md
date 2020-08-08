@@ -13,6 +13,8 @@ The following APIs are currently available:
 - `stb_image_write`
 - `stb_perlin`
 - `stb_rect_pack`
+- `stb_image_resize`
+- `stb_truetype`
 
 For high level bindigns have a look on [stb](https://crates.io/crates/stb) crate.
 

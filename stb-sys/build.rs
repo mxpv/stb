@@ -16,6 +16,8 @@ static FILES: &[&str] = &[
     "src/stb_rect_pack.c",
     #[cfg(feature = "stb_image_resize")]
     "src/stb_image_resize.c",
+    #[cfg(feature = "stb_truetype")]
+    "src/stb_truetype.c",
 ];
 
 fn main() {
