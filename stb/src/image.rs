@@ -85,6 +85,13 @@ impl<T> Data<T> {
     }
 }
 
+impl<T: Clone> Data<T> {
+    /// Consumes this object into Rust owned vector
+    pub fn into_vec(self) -> Vec<T> {
+        self.as_slice().to_vec()
+    }
+}
+
 impl<T> Drop for Data<T> {
     fn drop(&mut self) {
         unsafe { sys::stbi_image_free(self.data as *mut ffi::c_void) };
@@ -552,6 +559,20 @@ mod tests {
 
         for c in data.iter().cloned() {
             assert_eq!(c, u16::MAX);
+        }
+    }
+
+    #[test]
+    fn into_vec() {
+        let data = fs::read(fixture_path("white.png")).expect("Failed to read test file");
+        let (_, image) =
+            stbi_load_from_memory(&data, Channels::Grey).expect("Failed to load image");
+
+        let v = image.into_vec();
+
+        assert_eq!(v.len(), 600);
+        for c in v {
+            assert_eq!(c, 255);
         }
     }
 }
