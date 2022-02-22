@@ -10,8 +10,6 @@ static FILES: &[&str] = &[
     "src/stb_image.c",
     #[cfg(feature = "stb_image_write")]
     "src/stb_image_write.c",
-    #[cfg(feature = "stb_perlin")]
-    "src/stb_perlin.c",
     #[cfg(feature = "stb_rect_pack")]
     "src/stb_rect_pack.c",
     #[cfg(feature = "stb_image_resize")]
