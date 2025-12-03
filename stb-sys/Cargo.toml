@@ -45,5 +45,5 @@ stb_image_resize = []
 stb_truetype = []
 
 [build-dependencies]
-bindgen = "0.54"
+bindgen = "0.71.1"
 cc = "1.0"
